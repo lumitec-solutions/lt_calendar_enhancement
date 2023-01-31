@@ -1,4 +1,4 @@
-odoo.define('lt_cb_feedback_to_log.calendarpopupbutton', function (require) {
+odoo.define('lt_calendar_enhancement.calendarpopupbutton', function (require) {
 "use strict";
 const core = require("web.core");
 const _t = core._t;

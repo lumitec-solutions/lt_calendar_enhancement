@@ -5,8 +5,9 @@
 # See LICENSE file for full licensing details.
 ##############################################################################
 {
-    'name': 'Feedback To Log',
-    'summary': 'Meeting Feedback and Quick Jump into the Detail View',
+    'name': 'Calendar Enhancement',
+    'summary': 'Meeting Feedback and Quick Jump into the Detail View,'
+               'Add Client Adress to Calendar as prefilled',
     'author': "lumitec GmbH",
     'website': "https://www.lumitec.solutions",
     'category': '',
@@ -21,10 +22,10 @@
     ],
     'assets': {
         'web.assets_qweb': [
-            'lt_cb_feedback_to_log/static/src/xml/web_calendar.xml',
+            'lt_calendar_enhancement/static/src/xml/web_calendar.xml',
         ],
         'web.assets_backend': [
-            'lt_cb_feedback_to_log/static/src/js/calendar_popover.js',
+            'lt_calendar_enhancement/static/src/js/calendar_popover.js',
 
         ],
     },
