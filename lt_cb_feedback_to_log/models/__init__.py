@@ -5,3 +5,4 @@
 # See LICENSE file for full licensing details.
 ##############################################################################
 from . import mail_activity
+from . import calendar_event

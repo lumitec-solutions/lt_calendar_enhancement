@@ -2,8 +2,10 @@
 <templates xml:space="preserve">
     <t t-inherit="web.CalendarView.event.popover" t-inherit-mode="extension" t-name="CalenderDetailedView">
         <xpath expr="//a[hasclass('o_cw_popover_delete')]" position="after">
+            <button name="navigate_to" style="margin-top: 1px;" class="btn btn-primary navigate_to">Navigate To</button>
             <div style="position: relative">
-            <i style="position: absolute; top: -22px; right: 0.5rem;" class="fa fa-external-link-square detailed_form_view" />
+            <i style="position: absolute; top: -22px; right: 0.5rem;"
+               class="fa fa-external-link-square detailed_form_view"/>
             </div>
         </xpath>
     </t>
