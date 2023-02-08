@@ -34,7 +34,8 @@ class MailActivity(models.Model):
             }
 
         model = self.env[self.res_model].browse(self.res_id)
-        if self.res_model in ['crm.lead', 'helpdesk.ticket', 'sale.order', 'project.task'] and model.partner_id.id and model.partner_id.id not in partners.ids:
+        if self.res_model in ['helpdesk.ticket', 'sale.order', 'project.task'] and model.partner_id.id \
+                and model.partner_id.id not in partners.ids:
             action['context'] = {
                 'default_representative_ids': [(4, model.partner_id.id), (4, self.env.user.partner_id.id)],
             }
@@ -46,13 +47,14 @@ class MailActivity(models.Model):
             action['context'] = {
                 'model_id': self.env['ir.model']._get_id(self.env.context.get('default_res_model')),
                 'res_id': self.env.context.get('default_res_id'),
-                'model_name': self.env.context.get('default_res_model')
-
+                'model_name': self.env.context.get('default_res_model'),
+                'default_representative_ids': [(4, model.partner_id.id), (4, self.env.user.partner_id.id)],
             }
         return action
 
     def _action_done(self, feedback=False, attachment_ids=None):
-        """ Overrided to post feedback to the lognote of the meeting and also to prevent the saving of feedback to the description
+        """ Overrided to post feedback to the lognote of the meeting and also to prevent the saving of feedback
+        to the description
         """
         # marking as 'done'
         messages = self.env['mail.message']

@@ -10,15 +10,22 @@
                'Add Client Adress to Calendar as prefilled',
     'author': "lumitec GmbH",
     'website': "https://www.lumitec.solutions",
-    'category': '',
-    'version': '15.0.1.0.0',
+    'category': 'Extra Tools',
+    'version': '15.0.0.0.0',
     'license': 'OPL-1',
     'depends': [
         'base',
         'web',
-        'calendar'
+        'calendar',
+        'crm',
+        'event',
+        'contacts'
     ],
     'data': [
+        'security/ir.model.access.csv',
+        'data/cron.xml',
+        'views/meeting_type_views.xml',
+        'views/calendar_event_views.xml',
     ],
     'assets': {
         'web.assets_qweb': [
@@ -29,8 +36,8 @@
 
         ],
     },
-
     'installable': True,
     'application': False,
     'auto_install': False,
+    'post_load': 'post_load',
 }

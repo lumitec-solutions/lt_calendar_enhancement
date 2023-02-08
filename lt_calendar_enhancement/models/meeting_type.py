@@ -4,9 +4,12 @@
 #
 # See LICENSE file for full licensing details.
 ##############################################################################
-from . import meeting_type
-from . import crm_lead
-from . import mail_activity
-from . import calendar_event
-from . import res_partner
-from . import event_event
+from odoo import models, fields
+
+
+class ProfileConfiguration(models.Model):
+    _name = 'meeting.type'
+    _description = 'Meeting type'
+
+    name = fields.Char("Name",
+                       help="Name of the meeting type or category of meeting")

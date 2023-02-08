@@ -20,9 +20,8 @@ CalendarPopover.include({
         });
     },
     _onClickNavigateTo: function (ev) {
-       console.log(this.event.id, this, this.event.extendedProps.record.location)
        window.location.href = _.str.sprintf(_t('https://www.google.com/maps/search/?api=1&query=%s'), this.event.extendedProps.record.location);
     },
 
-});
+    });
 });
