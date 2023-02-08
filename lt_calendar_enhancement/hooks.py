@@ -10,7 +10,6 @@ from odoo.addons.calendar.models.calendar_alarm_manager import AlarmManager
 from odoo import api, fields
 
 
-
 def post_load():
     @api.model_create_multi
     def create(self, vals_list):
