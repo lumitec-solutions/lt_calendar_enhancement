@@ -33,7 +33,6 @@
         ],
         'web.assets_backend': [
             'lt_calendar_enhancement/static/src/js/calendar_popover.js',
-
         ],
     },
     'installable': True,
