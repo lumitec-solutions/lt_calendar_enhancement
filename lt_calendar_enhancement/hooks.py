@@ -97,7 +97,6 @@ def post_load():
 
     Meeting.create = create
 
-
     def write(self, values):
         detached_events = self.env['calendar.event']
         recurrence_update_setting = values.pop('recurrence_update', None)
@@ -175,7 +174,6 @@ def post_load():
                     )._send_mail_to_attendees(
                         self.env.ref('calendar.calendar_template_meeting_changedate', raise_if_not_found=False)
                     )
-
         return True
 
     Meeting.write = write

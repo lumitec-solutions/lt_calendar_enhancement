@@ -40,9 +40,9 @@
             <xpath expr="//field[@name='categ_ids']" position="before">
                 <field name="meeting_type_id"/>
             </xpath>
-
         </field>
     </record>
+
     <record model="ir.ui.view" id="view_calender_event_inherit">
         <field name="name">calendar.event.calendar</field>
         <field name="model">calendar.event</field>

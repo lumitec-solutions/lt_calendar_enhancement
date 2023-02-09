@@ -92,7 +92,6 @@ class CalendarEvent(models.Model):
         alarm_ids = [(4, alarm_days.id, 0), (4, alarm_hours.id, 0)]
         return alarm_ids
 
-
     event_id = fields.Many2one('event.event', string='Event',
                                ondelete='cascade', readonly=True)
     model_id = fields.Many2one('ir.model', string='Model',
