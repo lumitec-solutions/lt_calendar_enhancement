@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Create Meetings for Existing Events-->
+    <record id="ir_cron_create_meeting_for_events_enhanced" model="ir.cron">
+        <field name="name">Create Meetings for Existing Events</field>
+        <field name="model_id" ref="model_event_event"/>
+        <field name="state">code</field>
+        <field name="code">model.create_meetings()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="active">False</field>
+    </record>
+
+    <!--Change Values from Attendees to Representative-->
+    <record id="ir_cron_change_values_enhanced" model="ir.cron">
+        <field name="name">Change Values from Attendees to Representative</field>
+        <field name="model_id" ref="model_calendar_event"/>
+        <field name="state">code</field>
+        <field name="code">model.add_representatives()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="active">False</field>
+    </record>
+</odoo>

@@ -5,3 +5,4 @@
 # See LICENSE file for full licensing details.
 ##############################################################################
 from . import models
+from .hooks import post_load

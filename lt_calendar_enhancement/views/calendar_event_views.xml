@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_calender_event_inherit_form">
+        <field name="name">calendar.event.form</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='categ_ids']" position="before">
+                <field name="event_id" invisible="1"/>
+                <field name="opportunity_id" invisible="1"/>
+                <field name="model_id" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="attrs">{'readonly': [('event_id', '!=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='start']" position="attributes">
+                <attribute name="attrs">{'readonly': [('event_id', '!=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='stop']" position="attributes">
+                <attribute name="attrs">{'readonly': [('event_id', '!=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='duration']" position="attributes">
+                <attribute name="attrs">{'readonly': [('event_id', '!=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='allday']" position="attributes">
+                <attribute name="attrs">{'readonly': [('event_id', '!=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_ids']" position="attributes">
+                <attribute name="attrs">{'readonly': [('event_id', '!=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='recurrency']" position="attributes">
+                <attribute name="attrs">{'readonly': [('event_id', '!=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="representative_ids" widget="many2many_tags"/>
+            </xpath>
+            <xpath expr="//field[@name='allday']" position="after">
+                <field name="is_private_mail"/>
+            </xpath>
+            <xpath expr="//field[@name='categ_ids']" position="before">
+                <field name="meeting_type_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_calender_event_inherit">
+        <field name="name">calendar.event.calendar</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_calendar"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_ids']" position="after">
+                <field name="model_id" filters="1"/>
+            </xpath>
+            <xpath expr="//calendar" position="attributes">
+                <attribute name="quick_add">false</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
