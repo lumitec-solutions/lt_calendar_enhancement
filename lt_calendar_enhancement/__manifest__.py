@@ -7,11 +7,12 @@
 {
     'name': 'Calendar Enhancement',
     'summary': 'Meeting Feedback and Quick Jump into the Detail View,'
-               'Add Client Adress to Calendar as prefilled',
+               'Add Client Adress to Calendar as prefilled,'
+               'Appointments customization',
     'author': "lumitec GmbH",
     'website': "https://www.lumitec.solutions",
     'category': 'Extra Tools',
-    'version': '15.0.0.0.0',
+    'version': '15.0.1.0.0',
     'license': 'OPL-1',
     'depends': [
         'base',
