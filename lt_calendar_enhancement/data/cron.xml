@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!--Create Meetings for Existing Events-->
-    <record id="ir_cron_create_meeting_for_events_enhanced" model="ir.cron">
+    <record id="ir_cron_create_meeting_for_events" model="ir.cron">
         <field name="name">Create Meetings for Existing Events</field>
         <field name="model_id" ref="model_event_event"/>
         <field name="state">code</field>
@@ -13,7 +13,7 @@
     </record>
 
     <!--Change Values from Attendees to Representative-->
-    <record id="ir_cron_change_values_enhanced" model="ir.cron">
+    <record id="ir_cron_change_values" model="ir.cron">
         <field name="name">Change Values from Attendees to Representative</field>
         <field name="model_id" ref="model_calendar_event"/>
         <field name="state">code</field>
